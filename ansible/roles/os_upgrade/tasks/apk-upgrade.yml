@@ -1,0 +1,5 @@
+---
+- name: Upgrade / replace / downgrade / uninstall all installed packages to the latest versions available
+  community.general.apk:
+    available: true
+    upgrade: true

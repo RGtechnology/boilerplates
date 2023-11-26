@@ -1,0 +1,14 @@
+---
+- name: Example for an Ansible Playbook
+  hosts: all
+  gather_facts: true
+  become: false
+
+  pre_tasks:
+    - name: Debug - Distribution details
+      ansible.builtin.debug:
+        msg: "Distribution = {{ ansible_distribution }} {{ ansible_distribution_version }} - {{ ansible_distribution_release }}"
+
+  roles:
+    - example_role
+    - common_settings

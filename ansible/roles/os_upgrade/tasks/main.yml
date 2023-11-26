@@ -1,0 +1,8 @@
+---
+- name: Include apt-upgrade.yml on Debian or Ubuntu systems.
+  ansible.builtin.include_tasks: apt-upgrade.yml
+  when: ansible_os_family == 'Debian' or ansible_os_family == 'Ubuntu'
+
+- name: Include akp-upgrade on Alpine systems.
+  ansible.builtin.include_tasks: apk-upgrade.yml
+  when: ansible_os_family == 'Alpine'

@@ -1,0 +1,10 @@
+---
+- name: Install tzdata on Alpine Linux systems.
+  community.general.apk:
+    name: tzdata
+    update_cache: true
+  when: ansible_os_family == 'Alpine'
+
+- name: Set timezone to Europe/Vienna
+  community.general.timezone:
+    name: Europe/Vienna
